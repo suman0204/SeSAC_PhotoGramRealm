@@ -31,6 +31,8 @@
 		8B1B50B32AA56508005055FA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1B50B22AA56508005055FA /* Realm */; };
 		8B1B50B52AA56508005055FA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1B50B42AA56508005055FA /* RealmSwift */; };
 		8B1B50B72AA56A54005055FA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50B62AA56A54005055FA /* RealmModel.swift */; };
+		8B1B50C12AA6233F005055FA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8B1B50C02AA6233F005055FA /* .gitignore */; };
+		8B1B50C32AA6235C005055FA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50C22AA6235C005055FA /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		04BAEB352AA550E9005A3A69 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		04BAEB372AA55290005A3A69 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B1B50B62AA56A54005055FA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		8B1B50C02AA6233F005055FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8B1B50C22AA6235C005055FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 				04BAEB012AA4BF40005A3A69 /* Assets.xcassets */,
 				04BAEB032AA4BF40005A3A69 /* LaunchScreen.storyboard */,
 				04BAEB062AA4BF40005A3A69 /* Info.plist */,
+				8B1B50C02AA6233F005055FA /* .gitignore */,
 			);
 			path = PhotoGramRealm;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				04BAEB332AA550D2005A3A69 /* APIService.swift */,
 				04BAEB352AA550E9005A3A69 /* Photo.swift */,
+				8B1B50C22AA6235C005055FA /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BAEB052AA4BF40005A3A69 /* LaunchScreen.storyboard in Resources */,
+				8B1B50C12AA6233F005055FA /* .gitignore in Resources */,
 				04BAEB022AA4BF40005A3A69 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +306,7 @@
 				04BAEB222AA4C0BB005A3A69 /* BaseViewController.swift in Sources */,
 				04BAEB362AA550E9005A3A69 /* Photo.swift in Sources */,
 				04BAEB192AA4BFFB005A3A69 /* PhotoImageView.swift in Sources */,
+				8B1B50C32AA6235C005055FA /* APIKey.swift in Sources */,
 				04BAEAFB2AA4BF3F005A3A69 /* SceneDelegate.swift in Sources */,
 				04BAEB132AA4BF8C005A3A69 /* HomeViewController.swift in Sources */,
 				04BAEB2E2AA4CA1D005A3A69 /* WriteTextField.swift in Sources */,
