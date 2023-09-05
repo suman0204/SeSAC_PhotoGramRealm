@@ -34,6 +34,7 @@
 		8B1B50C92AA6C2C3005055FA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1B50C82AA6C2C3005055FA /* Realm */; };
 		8B1B50CB2AA6C2C3005055FA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1B50CA2AA6C2C3005055FA /* RealmSwift */; };
 		8B1B50CD2AA6CB1C005055FA /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50CC2AA6CB1C005055FA /* FileManager+Extension.swift */; };
+		8B1B50CF2AA6F248005055FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50CE2AA6F248005055FA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		8B1B50C02AA6233F005055FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8B1B50C22AA6235C005055FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8B1B50CC2AA6CB1C005055FA /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		8B1B50CE2AA6F248005055FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		04BAEB0F2AA4BF5F005A3A69 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8B1B50CE2AA6F248005055FA /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				04BAEB342AA550D2005A3A69 /* APIService.swift in Sources */,
 				04BAEB272AA4C106005A3A69 /* Color.swift in Sources */,
 				04BAEB382AA55290005A3A69 /* SearchCollectionViewCell.swift in Sources */,
+				8B1B50CF2AA6F248005055FA /* DetailViewController.swift in Sources */,
 				04BAEAF92AA4BF3F005A3A69 /* AppDelegate.swift in Sources */,
 				04BAEB222AA4C0BB005A3A69 /* BaseViewController.swift in Sources */,
 				04BAEB362AA550E9005A3A69 /* Photo.swift in Sources */,

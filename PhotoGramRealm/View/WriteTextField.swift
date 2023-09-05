@@ -25,6 +25,7 @@ class WriteTextField: UITextField {
         layer.cornerRadius = Constants.Desgin.cornerRadius
         layer.borderWidth = Constants.Desgin.borderWidth
         layer.borderColor = Constants.BaseColor.border
+        textColor = Constants.BaseColor.text
     }
 
 }

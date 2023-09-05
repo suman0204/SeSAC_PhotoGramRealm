@@ -9,7 +9,23 @@ import UIKit
 
 extension UIViewController {
     
-    //도큐먼트 폴더에서 이미지르르 가져오는 메서드
+    //도큐먼트에 저장된 사진 삭제
+    func removeImageFromDocument(fileName: String) {
+        //중복되는 코드 줄여보기
+        //1. 도큐먼트 폴더 경로 찾기
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        //2. 경로 설정(세부 경로, 이미지를 저장되어 있는 위치)
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch {
+            print(error)
+        }
+    }
+    
+    //도큐먼트 폴더에서 이미지를 가져오는 메서드
     func loadImageForDocument(fileName: String) -> UIImage {
         //1. 도큐먼트 폴더 경로 찾기
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {

@@ -45,6 +45,8 @@ class HomeViewController: BaseViewController {
     }
     
     override func configure() {
+        super.configure()
+        
         view.addSubview(tableView)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonClicked))
@@ -54,6 +56,8 @@ class HomeViewController: BaseViewController {
         let backupButton = UIBarButtonItem(title: "백업", style: .plain, target: self, action: #selector(backupButtonClicked))
         navigationItem.leftBarButtonItems = [sortButton, filterButton, backupButton]
     }
+    
+    
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
@@ -134,13 +138,39 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let vc = DetailViewController()
+        vc.data = tasks[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
         //Realm Delete
-        let data = tasks[indexPath.row]
+//        let data = tasks[indexPath.row]
+//        
+//        removeImageFromDocument(fileName: "jack_\(data._id).jpg") // Realm의 data가 삭제되기 전에 이미지를 제거한다
+//
+//        try! realm.write {
+//            realm.delete(data) //Realm에서 delete 메서드 제공 - Realm에 record만 삭제되고 저장된 이미지는 삭제되지 않음 / removeImageFromDocument를 통해 이미지 제거
+//        }
+//        
+//        
+//        tableView.reloadData() //record 삭제하고 뷰 갱신해주기!
         
-        try! realm.write {
-            realm.delete(data) //Realm에서 delete 메서드 제공
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let like = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            print("좋아요 선택됨")
         }
+        like.backgroundColor = .orange
+        like.image = tasks[indexPath.row].diaryLike ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         
-        tableView.reloadData() //record 삭제하고 뷰 갱신해주기!
+        let sample = UIContextualAction(style: .normal, title: "테스트") { action, view, completionHandler in
+            print("테스트 선택됨")
+        }
+        sample.backgroundColor = .blue
+        sample.image = UIImage(systemName: "pencil")
+        
+        
+        return UISwipeActionsConfiguration(actions: [like, sample]) // 배열 순서대로 나타남 (leading, trailing에 따라 다르게 보임)
     }
 }
