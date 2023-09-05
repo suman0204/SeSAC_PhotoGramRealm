@@ -51,6 +51,11 @@ class PhotoListTableViewCell: BaseTableViewCell {
 
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        diaryImageView.image = nil
+    }
 
     
     override func configure() {

@@ -57,6 +57,8 @@ class AddViewController: BaseViewController {
         return view
     }()
       
+    var fullURL: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad() //안하는 경우 생기는 문제
         
@@ -68,7 +70,7 @@ class AddViewController: BaseViewController {
         //realm 파일에 접근할 수 있도록, 위치를 찾는 코드
         let realm = try! Realm() //테이블 경로에 접근하기 위한 코드
         
-        let task = DiaryTable(diaryTitle:titleTextField.text!, diaryDate: Date(), diaryContents: contentTextView.text!, diaryPhoto: nil)
+        let task = DiaryTable(diaryTitle:titleTextField.text!, diaryDate: Date(), diaryContents: contentTextView.text!, diaryPhoto: fullURL)
         
         try! realm.write {
             realm.add(task)
@@ -76,6 +78,10 @@ class AddViewController: BaseViewController {
         }
         
 //        realm.add(task) //Transaction 오류 발생
+        
+        if userImageView.image != nil {
+            saveImageToDocument(fileName: "jack_\(task._id).jpg", image: userImageView.image!)
+        }
         
         navigationController?.popViewController(animated: true)
     }
@@ -92,11 +98,14 @@ class AddViewController: BaseViewController {
         let vc = SearchViewController()
         vc.didSelectItemHandler = { [weak self] value in
             
+            self?.fullURL = value
+            
             DispatchQueue.global().async {
                 if let url = URL(string: value), let data = try? Data(contentsOf: url ) {
                     
                     DispatchQueue.main.async {
                         self?.userImageView.image = UIImage(data: data)
+                        
                     }
                 }
             }

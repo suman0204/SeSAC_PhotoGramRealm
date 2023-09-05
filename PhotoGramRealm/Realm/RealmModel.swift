@@ -23,6 +23,6 @@ class DiaryTable: Object {
         self.diaryDate = diaryDate
         self.diaryContents = diaryContents
         self.diaryPhoto = diaryPhoto
-        self.diaryLike = false
+        self.diaryLike = true
    }
 }
