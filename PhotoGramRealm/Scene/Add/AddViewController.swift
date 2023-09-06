@@ -59,6 +59,8 @@ class AddViewController: BaseViewController {
       
     var fullURL: String?
     
+    let repository = DiaryTableRepository()
+    
     override func viewDidLoad() {
         super.viewDidLoad() //안하는 경우 생기는 문제
         
@@ -68,14 +70,16 @@ class AddViewController: BaseViewController {
     @objc func saveButtonClicked() {
         
         //realm 파일에 접근할 수 있도록, 위치를 찾는 코드
-        let realm = try! Realm() //테이블 경로에 접근하기 위한 코드
+//        let realm = try! Realm() //테이블 경로에 접근하기 위한 코드
         
         let task = DiaryTable(diaryTitle:titleTextField.text!, diaryDate: Date(), diaryContents: contentTextView.text!, diaryPhoto: fullURL)
         
-        try! realm.write {
-            realm.add(task)
-            print("Realm Add Succeed")
-        }
+//        try! realm.write {
+//            realm.add(task)
+//            print("Realm Add Succeed")
+//        }
+        repository.createItem(task)
+        
         
 //        realm.add(task) //Transaction 오류 발생
         

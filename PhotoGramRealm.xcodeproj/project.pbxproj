@@ -35,6 +35,7 @@
 		8B1B50CB2AA6C2C3005055FA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1B50CA2AA6C2C3005055FA /* RealmSwift */; };
 		8B1B50CD2AA6CB1C005055FA /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50CC2AA6CB1C005055FA /* FileManager+Extension.swift */; };
 		8B1B50CF2AA6F248005055FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50CE2AA6F248005055FA /* DetailViewController.swift */; };
+		8B1B50D62AA80032005055FA /* DiaryTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50D52AA80032005055FA /* DiaryTableRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		8B1B50C22AA6235C005055FA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		8B1B50CC2AA6CB1C005055FA /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		8B1B50CE2AA6F248005055FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8B1B50D52AA80032005055FA /* DiaryTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1B50B62AA56A54005055FA /* RealmModel.swift */,
+				8B1B50D52AA80032005055FA /* DiaryTableRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				04BAEB222AA4C0BB005A3A69 /* BaseViewController.swift in Sources */,
 				04BAEB362AA550E9005A3A69 /* Photo.swift in Sources */,
 				04BAEB192AA4BFFB005A3A69 /* PhotoImageView.swift in Sources */,
+				8B1B50D62AA80032005055FA /* DiaryTableRepository.swift in Sources */,
 				8B1B50C32AA6235C005055FA /* APIKey.swift in Sources */,
 				04BAEAFB2AA4BF3F005A3A69 /* SceneDelegate.swift in Sources */,
 				04BAEB132AA4BF8C005A3A69 /* HomeViewController.swift in Sources */,

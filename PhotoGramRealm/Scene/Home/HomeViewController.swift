@@ -22,7 +22,9 @@ class HomeViewController: BaseViewController {
     
     var tasks: Results<DiaryTable>!
     
-    let realm = try! Realm()
+//    let realm = try! Realm()
+    
+    let repository = DiaryTableRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,15 @@ class HomeViewController: BaseViewController {
         //Realm Read
 //        let realm = try! Realm()
         
-        let tasks = realm.objects(DiaryTable.self).sorted(byKeyPath: "diaryDate", ascending: false)
+//        let tasks = realm.objects(DiaryTable.self).sorted(byKeyPath: "diaryDate", ascending: false) //VC에서 굳이 알 필요 없다
+        tasks = repository.fetch()
         
-        self.tasks = tasks // tasks = realm.objects(DiaryTable.self)
+//        self.tasks = tasks // tasks = realm.objects(DiaryTable.self)
         
-        print(realm.configuration.fileURL)
+//        print(realm.configuration.fileURL)
+        
+        repository.checkSchemaVersion()
+        print(tasks)
     }
     
     override func viewWillAppear(_ animated: Bool) { //추가한 데이터가 홈뷰에 바로 보여질 수 있게 viewWillAppeard에서
@@ -80,19 +86,21 @@ class HomeViewController: BaseViewController {
     
     @objc func filterButtonClicked() {
        
-        let result = realm.objects(DiaryTable.self).where {
-            //1. 대소문자 구별 없음 - caseInsensitive
-//            $0.diaryTitle.contains("제목", options: .caseInsensitive) //title에 제목이 포함된 row만
-            
-            //2. Bool
-//            $0.diaryLike == true
-            
-            //3. 사진이 있는 데이터만 불러오기 (diaryPhoto의 nil 여부 판단)
-            $0.diaryPhoto != nil
-//            $0.diaryPhoto.isEmpty // 사용 불가
-        }
+//        let result = realm.objects(DiaryTable.self).where {
+//            //1. 대소문자 구별 없음 - caseInsensitive
+////            $0.diaryTitle.contains("제목", options: .caseInsensitive) //title에 제목이 포함된 row만
+//
+//            //2. Bool
+////            $0.diaryLike == true
+//
+//            //3. 사진이 있는 데이터만 불러오기 (diaryPhoto의 nil 여부 판단)
+//            $0.diaryPhoto != nil
+////            $0.diaryPhoto.isEmpty // 사용 불가
+//        }
         
-        tasks = result
+//        tasks = result
+        
+        tasks = repository.fetchFilter()
         
         tableView.reloadData()
         
@@ -111,7 +119,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let data = tasks[indexPath.row]
         
         cell.titleLabel.text = data.diaryTitle
-        cell.contentLabel.text = data.diaryContents
+        cell.contentLabel.text = data.contents
         cell.dateLabel.text = "\(data.diaryDate)"
         //도큐먼트에 저장된 이미지 가져오기
         cell.diaryImageView.image = loadImageForDocument(fileName: "jack_\(data._id).jpg")

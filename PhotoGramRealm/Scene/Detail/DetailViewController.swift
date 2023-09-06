@@ -28,6 +28,8 @@ class DetailViewController: BaseViewController {
         return view
     }()
     
+    let repository = DiaryTableRepository()
+    
     override func configure() {
         super.configure()
         view.addSubview(titleTextField)
@@ -36,7 +38,7 @@ class DetailViewController: BaseViewController {
         guard let data = data else { return }
         
         titleTextField.text = data.diaryTitle
-        contentTextField.text = data.diaryContents
+        contentTextField.text = data.contents
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(editButtonClicked))
     }
@@ -44,17 +46,18 @@ class DetailViewController: BaseViewController {
     @objc func editButtonClicked() {
         
         guard let data = data else { return }
-        let item = DiaryTable(value: ["_id": data._id, "diaryTitle": titleTextField.text!, "diaryContents": contentTextField.text!])
+//        let item = DiaryTable(value: ["_id": data._id, "diaryTitle": titleTextField.text!, "diaryContents": contentTextField.text!])
         
-        do {
-            try realm.write {
-                // 트랜젝션 오류를 막기 위해 try안에 선언
-                realm.add(item, update: .modified) // add를 통해 수정하는 방법
-            }
-        } catch {
-            print("") // NSLog로 남기거나 집계한다
-        }
-        
+//        do {
+//            try realm.write {
+//                // 트랜젝션 오류를 막기 위해 try안에 선언
+////                realm.add(item, update: .modified) // add를 통해 수정하는 방법
+//                realm.create(DiaryTable.self, value: DiaryTable(value: ["_id": data._id, "diaryTitle": titleTextField.text!, "diaryContents": contentTextField.text!]), update: .modified)
+//            }
+//        } catch {
+//            print("") // NSLog로 남기거나 집계한다
+//        }
+        repository.updateItem(id: data._id, title: titleTextField.text!, contents: contentTextField.text!)
         
         navigationController?.popViewController(animated: true)
     }
