@@ -36,6 +36,8 @@
 		8B1B50CD2AA6CB1C005055FA /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50CC2AA6CB1C005055FA /* FileManager+Extension.swift */; };
 		8B1B50CF2AA6F248005055FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50CE2AA6F248005055FA /* DetailViewController.swift */; };
 		8B1B50D62AA80032005055FA /* DiaryTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50D52AA80032005055FA /* DiaryTableRepository.swift */; };
+		8B1B50DB2AA954D9005055FA /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1B50DA2AA954D9005055FA /* BackupViewController.swift */; };
+		8B1B50DE2AA95BBF005055FA /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1B50DD2AA95BBF005055FA /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		8B1B50CC2AA6CB1C005055FA /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		8B1B50CE2AA6F248005055FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8B1B50D52AA80032005055FA /* DiaryTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableRepository.swift; sourceTree = "<group>"; };
+		8B1B50DA2AA954D9005055FA /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 			files = (
 				8B1B50CB2AA6C2C3005055FA /* RealmSwift in Frameworks */,
 				8B1B50C92AA6C2C3005055FA /* Realm in Frameworks */,
+				8B1B50DE2AA95BBF005055FA /* Zip in Frameworks */,
 				8B1B50C62AA6C1D8005055FA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +106,7 @@
 		04BAEAF72AA4BF3F005A3A69 /* PhotoGramRealm */ = {
 			isa = PBXGroup;
 			children = (
+				8B6CC2742AAAA06C002FA6A0 /* ToDo */,
 				04BAEB322AA550CC005A3A69 /* Network */,
 				04BAEB232AA4C0DA005A3A69 /* Utility */,
 				04BAEB1A2AA4C04F005A3A69 /* Base */,
@@ -132,6 +137,7 @@
 		04BAEB0D2AA4BF52005A3A69 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				8B1B50D92AA954C3005055FA /* Backup */,
 				04BAEB2F2AA550A1005A3A69 /* Search */,
 				04BAEB0E2AA4BF5A005A3A69 /* Home */,
 				04BAEB102AA4BF63005A3A69 /* Add */,
@@ -221,6 +227,21 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		8B1B50D92AA954C3005055FA /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				8B1B50DA2AA954D9005055FA /* BackupViewController.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		8B6CC2742AAAA06C002FA6A0 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +262,7 @@
 				8B1B50C52AA6C1D8005055FA /* SnapKit */,
 				8B1B50C82AA6C2C3005055FA /* Realm */,
 				8B1B50CA2AA6C2C3005055FA /* RealmSwift */,
+				8B1B50DD2AA95BBF005055FA /* Zip */,
 			);
 			productName = PhotoGramRealm;
 			productReference = 04BAEAF52AA4BF3F005A3A69 /* PhotoGramRealm.app */;
@@ -273,6 +295,7 @@
 			packageReferences = (
 				8B1B50C42AA6C1D8005055FA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8B1B50C72AA6C2C3005055FA /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8B1B50DC2AA95BBF005055FA /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 04BAEAF62AA4BF3F005A3A69 /* Products */;
 			projectDirPath = "";
@@ -303,6 +326,7 @@
 			files = (
 				04BAEB312AA550A7005A3A69 /* SearchViewController.swift in Sources */,
 				04BAEB1E2AA4C090005A3A69 /* BaseTableViewCell.swift in Sources */,
+				8B1B50DB2AA954D9005055FA /* BackupViewController.swift in Sources */,
 				8B1B50B72AA56A54005055FA /* RealmModel.swift in Sources */,
 				04BAEB252AA4C0DF005A3A69 /* Constants.swift in Sources */,
 				04BAEAFD2AA4BF3F005A3A69 /* ViewController.swift in Sources */,
@@ -553,6 +577,14 @@
 				version = 10.42.1;
 			};
 		};
+		8B1B50DC2AA95BBF005055FA /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -570,6 +602,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B1B50C72AA6C2C3005055FA /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		8B1B50DD2AA95BBF005055FA /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B1B50DC2AA95BBF005055FA /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

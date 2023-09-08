@@ -19,7 +19,7 @@ class DiaryTableRepository: DiaryTableRepositoryType {
     private let realm = try! Realm()
     
     private func a() { //==> 다른 파일에서 쓸 일 없고, 클래스 안에서만 쓸 수 있음 => 오버라이딩 불가능 => final 키워드를 잠재적으로 유추 가능
-        
+        let a = ""
     }
     
     func fetch() -> Results<DiaryTable> {

@@ -9,6 +9,13 @@ import UIKit
 
 extension UIViewController {
     
+    func documentDirectoryPath() -> URL? {
+        //1. 도큐먼트 폴더 경로 찾기
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        
+        return documentDirectory
+    }
+    
     //도큐먼트에 저장된 사진 삭제
     func removeImageFromDocument(fileName: String) {
         //중복되는 코드 줄여보기

@@ -10,6 +10,10 @@ import RealmSwift
 
 class DiaryTable: Object {
     
+    override init() {
+        print("DiaryTable Init")
+    }
+    
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var diaryTitle: String //일기 제목(필수)
     @Persisted var diaryDate: Date //일기 등록 날짜 (필수)
@@ -28,4 +32,8 @@ class DiaryTable: Object {
         self.diaryLike = true
         self.diarySummary = "제목은 '\(diaryTitle)'이고, 내용은 '\(contents ?? "")'입니다"
    }
+    
+    deinit {
+        print("DiaryTabe Deinit")
+    }
 }
