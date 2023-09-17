@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //컬럼과 테이블 단순 추가 삭제의 경우엔 별도 코드가 필요없음
-        let config = Realm.Configuration(schemaVersion: 5) { migration, oldSchemaVersion in //migration: 최신 버전, oldSchemaVersion: 가장 최근에 앱 켰을 때의 버전
+        let config = Realm.Configuration(schemaVersion: 6) { migration, oldSchemaVersion in //migration: 최신 버전, oldSchemaVersion: 가장 최근에 앱 켰을 때의 버전
             
             if oldSchemaVersion < 1 {   } //diaryPin Column 추가
             
@@ -40,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     new["diarySummary"] = "제목은 '\(old["diaryTitle"])'이고, 내용은 '\(old["contents"])'입니다"
                 }
             }
+            
+            if oldSchemaVersion < 6 { }
         }
         
         Realm.Configuration.defaultConfiguration = config

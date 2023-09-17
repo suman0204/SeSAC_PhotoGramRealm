@@ -92,3 +92,4 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         return layout
     }
 }
+
